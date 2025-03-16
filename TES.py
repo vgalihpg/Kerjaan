@@ -22,11 +22,11 @@ elif option == "Analisis Rating & Review":
         st.text("Plot di atas dibuat berdasarkan review pelanggan terhadap suatu produk yang sudah direview paling sedikit lima belas kali terhitung dari tahun 2016 hingga 2018. Produk dengan ID '37eb69...' memiliki rating tertinggi, yang berarti para pelanggan sangat puas dengan produk ini sepanjang rentang tahun tersebut.")
 
 # Load dataset ulasan
-file_path_reviews = "/mnt/data/olist_order_reviews_dataset.csv"
+file_path_reviews = "https://github.com/vgalihpg/Kerjaan/blob/main/olist_order_reviews_dataset.csv"
 df_reviews = pd.read_csv(file_path_reviews)
 
 # Load dataset produk dalam pesanan
-file_path_items = "/mnt/data/olist_order_items_dataset.csv"
+file_path_items = "https://github.com/vgalihpg/Kerjaan/blob/main/olist_order_items_dataset.csv"
 df_items = pd.read_csv(file_path_items)
 
 # Gabungkan dataset berdasarkan order_id
