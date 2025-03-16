@@ -60,7 +60,7 @@ elif option == "Analisis Rating & Review":
 
     st.metric(label="Total Jenis Produk Unik", value=total_products)
 
-    min_reviews = st.slider("Filter Produk dengan Minimal Jumlah Review", 1, 50, 5)
+    min_reviews = st.slider("Filter Produk dengan Minimal Jumlah Review", 1, 250, 50)
     filtered_data = review_stats[review_stats["total_reviews"] >= min_reviews]
 
     st.write("### Data Review Per Produk")
