@@ -48,3 +48,18 @@ st.dataframe(filtered_data, use_container_width=True)
 
 csv = filtered_data.to_csv(index=False).encode('utf-8')
 st.download_button("📥 Download Data", data=csv, file_name="review_stats.csv", mime="text/csv")
+
+st.subheader("📦 Analisis Penjualan Produk")
+product_sales = df_items.groupby("product_id").agg(
+    quantity_sold=("order_id", "count"),
+    unit_price=("price", "mean")
+).reset_index()
+
+total_sold_products = product_sales["product_id"].nunique()
+st.metric(label="Total Jenis Produk Terjual", value=total_sold_products)
+
+st.write("### Data Penjualan Per Produk")
+st.dataframe(product_sales, use_container_width=True)
+
+csv_sales = product_sales.to_csv(index=False).encode('utf-8')
+st.download_button("📥 Download Data Penjualan", data=csv_sales, file_name="product_sales.csv", mime="text/csv")
