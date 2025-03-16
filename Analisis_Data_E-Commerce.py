@@ -36,7 +36,7 @@ if option == "Analisis Penjualan":
     csv_sales = filtered_sales.to_csv(index=False).encode('utf-8')
     st.download_button("📥 Download Data Penjualan", data=csv_sales, file_name="product_sales.csv", mime="text/csv")
 
-    st.text("Pertanyaan lain yang dapat muncul dari data di atas yaitu pada harga barang berapa minat beli konsumen di Brazil mulai turun? Analisa dapat dilakukan dengan melihat kapan atau pada harga berapa kuantitas penjualan masih ramai dan kapan mulai menurun.")
+    st.text("Pertanyaan lain yang dapat muncul dari data di atas yaitu pada harga barang berapa minat beli konsumen di Brazil mulai turun? Untuk menjawab pertanyaan tersebut, dapat menggunakan filter di atas untuk melihat kapan atau pada harga berapa kuantitas penjualan masih ramai dan kapan mulai menurun.")
 
 elif option == "Analisis Rating & Review":
     st.subheader("Pertanyaan 2: Produk manakah yang memiliki rating terbaik dan review terbanyak?")
