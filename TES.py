@@ -40,13 +40,11 @@ st.subheader("📊 Analisis Review Produk")
 
 st.metric(label="Total Jenis Produk Unik", value=total_products)
 
-min_reviews = st.slider("Filter Produk dengan Minimal Jumlah Review", 1, 70, 5)
+min_reviews = st.slider("Filter Produk dengan Minimal Jumlah Review", 1, 150, 10)
 filtered_data = review_stats[review_stats["total_reviews"] >= min_reviews]
 
-# Menampilkan tabel data yang dapat dieksplorasi
 st.write("### Data Review Per Produk")
 st.dataframe(filtered_data, use_container_width=True)
 
-# Tambahkan opsi download data
 csv = filtered_data.to_csv(index=False).encode('utf-8')
 st.download_button("📥 Download Data", data=csv, file_name="review_stats.csv", mime="text/csv")
