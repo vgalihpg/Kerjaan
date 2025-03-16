@@ -70,3 +70,5 @@ elif option == "Analisis Rating & Review":
 
     csv = filtered_data.to_csv(index=False).encode('utf-8')
     st.download_button("📥 Download Data", data=csv, file_name="review_stats.csv", mime="text/csv")
+
+    st.text("Untuk menjawab pertanyaan 2, tidak sepenuhnya tepat untuk menjawab produk dengan rating 5 dengan review terbanyak lah yang terbaik. Bisa saja orang memperhatikan jumlah review dan ratingnya sekaligus, tidak semata-mata harus rating 5 terlebih dahulu, baru review terbanyak. Karena itu, ditampilkan data tentang rating dan review dengan filter jumlah review.")
