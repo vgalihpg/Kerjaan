@@ -62,7 +62,7 @@ min_price, max_price = st.slider("Filter Produk berdasarkan Harga Satuan", float
 filtered_sales = product_sales[(product_sales["unit_price"] >= min_price) & (product_sales["unit_price"] <= max_price)]
 
 st.write("### Data Penjualan Per Produk")
-st.dataframe(product_sales, use_container_width=True)
+st.dataframe(filtered_sales, use_container_width=True)
 
-csv_sales = product_sales.to_csv(index=False).encode('utf-8')
+csv_sales = filtered_sales.to_csv(index=False).encode('utf-8')
 st.download_button("📥 Download Data Penjualan", data=csv_sales, file_name="product_sales.csv", mime="text/csv")
