@@ -40,7 +40,7 @@ st.subheader("📊 Analisis Review Produk")
 
 st.metric(label="Total Jenis Produk Unik", value=total_products)
 
-min_reviews = st.slider("Filter Produk dengan Minimal Jumlah Review", 1, 150, 10)
+min_reviews = st.slider("Filter Produk dengan Minimal Jumlah Review", 1, 200, 10)
 filtered_data = review_stats[review_stats["total_reviews"] >= min_reviews]
 
 st.write("### Data Review Per Produk")
