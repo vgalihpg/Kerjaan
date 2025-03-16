@@ -58,6 +58,9 @@ product_sales = df_items.groupby("product_id").agg(
 total_sold_products = product_sales["product_id"].nunique()
 st.metric(label="Total Jenis Produk Terjual", value=total_sold_products)
 
+min_price, max_price = st.slider("Filter Produk berdasarkan Harga Satuan", float(product_sales["unit_price"].min()), float(product_sales["unit_price"].max()), (float(product_sales["unit_price"].min()), float(product_sales["unit_price"].max())))
+filtered_sales = product_sales[(product_sales["unit_price"] >= min_price) & (product_sales["unit_price"] <= max_price)]
+
 st.write("### Data Penjualan Per Produk")
 st.dataframe(product_sales, use_container_width=True)
 
