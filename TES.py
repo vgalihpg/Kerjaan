@@ -16,7 +16,7 @@ if option == "Analisis Penjualan":
         st.text("Plot di atas dibuat berdasarkan hasil penjualan produk-produk E-Commerce dalam rentang tahun 2016 sampai 2018. Produk dengan ID 'bb50f2...' memiliki total harga tertinggi, menunjukkan bahwa produk ini adalah yang paling menguntungkan dalam hal nilai transaksi selama rentang tahun tersebut.")
     
     st.subheader("📦 Analisis Penjualan Produk")
-    file_path_items = "/mnt/data/olist_order_items_dataset.csv"
+    file_path_items = "https://raw.githubusercontent.com/vgalihpg/Kerjaan/refs/heads/main/olist_order_items_dataset.csv"
     df_items = pd.read_csv(file_path_items)
     
     product_sales = df_items.groupby("product_id").agg(
@@ -42,9 +42,9 @@ elif option == "Analisis Rating & Review":
     with st.expander("Lihat penjelasan plot"):
         st.text("Plot di atas dibuat berdasarkan review pelanggan terhadap suatu produk yang sudah direview paling sedikit lima belas kali terhitung dari tahun 2016 hingga 2018. Produk dengan ID '37eb69...' memiliki rating tertinggi, yang berarti para pelanggan sangat puas dengan produk ini sepanjang rentang tahun tersebut.")
     
-    file_path_reviews = "/mnt/data/olist_order_reviews_dataset.csv"
+    file_path_reviews = "https://raw.githubusercontent.com/vgalihpg/Kerjaan/refs/heads/main/olist_order_reviews_dataset.csv"
     df_reviews = pd.read_csv(file_path_reviews)
-    file_path_items = "/mnt/data/olist_order_items_dataset.csv"
+    file_path_items = "https://raw.githubusercontent.com/vgalihpg/Kerjaan/refs/heads/main/olist_order_items_dataset.csv"
     df_items = pd.read_csv(file_path_items)
     
     df_merged = df_reviews.merge(df_items, on="order_id", how="inner")
